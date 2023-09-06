@@ -26,6 +26,15 @@ services:
     networks:
       - p-network
 
+  # ping/pong application server
+  mailserver:
+    image: skilldlabs/mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025
+    networks:
+      - p-network
+      
   # visualize metrics with grafana
   grafana:
     image: grafana/grafana
